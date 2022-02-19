@@ -14,3 +14,17 @@ def read_stock(ticker: str, folder_path: str) -> pd.DataFrame:
 
     except FileNotFoundError:
         print("File Doesn't Exist")
+
+def read_sector(folder_path: str) -> pd.DataFrame:
+    """
+    Function that read the sector .csv file.
+
+    @folder_path: folder of the stocks.
+    @return: df with the data.
+    """
+    try:
+        df_stock = pd.read_csv(folder_path, index_col=0)
+        return df_stock
+
+    except FileNotFoundError:
+        print("File Doesn't Exist")
